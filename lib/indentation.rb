@@ -1,5 +1,4 @@
 class IndentationModule
-  
   def initialize
     @indent_counter = 0
     @keywords = %w[def class if else]
@@ -10,13 +9,13 @@ class IndentationModule
     line_arr = line.split(/ /)
     check_line(line_arr)
     @indent_counter.negative? ? 0 : @indent_counter
-    return true if !line_arr[0..@indent_counter].all?('') && @indent_counter > 0
+    return true if !line_arr[0..@indent_counter].all?('') && @indent_counter.positive?
 
     @indent_counter += add_to_counter
     false
   end
 
-  private 
+  private
 
   def indent_counter(word)
     ret_val = 0
@@ -31,7 +30,7 @@ class IndentationModule
 
   def check_line(line)
     line.each do |word|
-      if indent_counter(word) > 0
+      if indent_counter(word).positive?
         add_to_counter = indent_counter(word)
         break
       end

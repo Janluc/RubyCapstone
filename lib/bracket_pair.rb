@@ -29,7 +29,7 @@ class BracketPairModule
   end
 
   private
-  
+
   def check_pair(item)
     @bracket_pairs.each_with_index do |i, index|
       if i.open_pair == item && @open_bracket.nil?
