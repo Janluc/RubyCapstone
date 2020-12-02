@@ -104,8 +104,8 @@ end
 
 ## Instructions
 - When you run the program, You will be asked to place the file you would like to lint to the "to_lint" folder.
-- Please place the code file inside that folder now
-- Type in the name of the file exactly how you see it (including the file extension)
+- Please place the code file inside that folder now. (player.rb is provided for you and you can use it to test out the linter!)
+- Type in the name of the file exactly how you see it (player.rb if you are using the provided test file)
 - If done correctly, you will see your the results of the linter shortly!
 
 
