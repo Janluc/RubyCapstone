@@ -4,6 +4,6 @@ class Player
 
   def initialize(name, token
     self.name = name
-    self.token = token
+    self.token = token{
   end
 end
