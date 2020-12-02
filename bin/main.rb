@@ -18,7 +18,7 @@ def print_indentation(line, line_number)
   puts ''
 end
 
-file = File.open('C:/Users/Janluc/Desktop/Programming/Microverse/Ruby/TestFiles/lib/player.rb')
+file = File.open('../lib/player.rb')
 
 linter = Linter.new(file)
 bracket_linter = linter.bracket_linter
