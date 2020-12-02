@@ -1,10 +1,13 @@
 # Player Class
-class Player
+# rubocop:disable Lint/Syntax
+
+class Player 
   attr_accessor :name, :token
 
   def initialize(name, token
-  self.name = name
+    self.name = name
     self.token = token
-    "unending string
   end
 end
+
+# rubocop:enable Lint/Syntax
