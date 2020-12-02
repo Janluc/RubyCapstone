@@ -1,6 +1,7 @@
 require_relative '../lib/linter'
 
 def print_intro
+  system('clear')
   puts 'Welcome to my linter!'
   puts 'To get started please put the code file you would like to lint in the "to_lint" folder'
   puts 'afterwards, please input the name of the code file below!'
@@ -32,6 +33,7 @@ file = File.open("../to_lint/#{file_input}")
 linter = Linter.new(file)
 bracket_linter = linter.bracket_linter
 indentation_linter = linter.indentation_linter
+system('clear')
 
 linter.file_lines.each_with_index do |line, line_number|
   print_whitespace(line, line_number) if linter.trailing_whitespace?(line)
