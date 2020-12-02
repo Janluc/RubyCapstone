@@ -1,5 +1,12 @@
 require_relative '../lib/linter'
 
+def print_intro
+  puts 'Welcome to my linter!'
+  puts 'To get started please put the code file you would like to lint in the "to_lint" folder'
+  puts 'afterwards, please input the name of the code file below!'
+  puts ''
+end
+
 def print_whitespace(line, line_number)
   puts "Trailing whitespace detected on line #{line_number + 1}"
   puts "Line #{line_number + 1}: #{line} <-"
@@ -18,7 +25,9 @@ def print_indentation(line, line_number)
   puts ''
 end
 
-file = File.open('../lib/player.rb')
+print_intro
+file_input = gets.chomp
+file = File.open("../to_lint/#{file_input}")
 
 linter = Linter.new(file)
 bracket_linter = linter.bracket_linter
@@ -32,5 +41,3 @@ linter.file_lines.each_with_index do |line, line_number|
   name_of_bracket_pair = bracket_linter.bracket_pairs[bracket_linter.pair_index].name
   print_bracket_pair(line, line_number, name_of_bracket_pair)
 end
-
-
