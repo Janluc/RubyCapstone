@@ -2,7 +2,7 @@ AllCops:
   Exclude:
     - "Guardfile"
     - "Rakefile"
-    - "./player.rb"
+    - "./to_lint/player.rb"
 
   DisplayCopNames: true
 
