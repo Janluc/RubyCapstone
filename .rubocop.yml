@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - "Guardfile"
     - "Rakefile"
+    - "./player.rb"
 
   DisplayCopNames: true
 
