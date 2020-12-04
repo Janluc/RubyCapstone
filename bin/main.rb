@@ -30,7 +30,6 @@ print_intro
 file_input = gets.chomp
 file = File.open("./to_lint/#{file_input}")
 
-
 linter = Linter.new(file)
 bracket_linter = linter.bracket_linter
 indentation_linter = linter.indentation_linter

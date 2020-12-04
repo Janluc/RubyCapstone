@@ -1,8 +1,7 @@
 BracketPair = Struct.new(:name, :open_pair, :close_pair)
 
 class BracketPairModule
-  attr_accessor :bracket_pairs, :pair_index
-  attr_reader :open_bracket, :close_bracket
+  attr_reader :open_bracket, :close_bracket, :bracket_pairs, :pair_index
 
   def initialize
     @bracket_pairs = [

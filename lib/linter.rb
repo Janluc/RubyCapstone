@@ -2,7 +2,7 @@ require_relative 'bracket_pair'
 require_relative 'indentation'
 
 class Linter
-  attr_accessor :file_lines, :bracket_linter, :indentation_linter
+  attr_reader :file_lines, :bracket_linter, :indentation_linter
 
   def initialize(file)
     @file = file
