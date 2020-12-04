@@ -2,11 +2,11 @@
 # rubocop:disable Lint/Syntax
 
 class Player 
-  attr_accessor :name, :token
+attr_accessor :name, :token
 
   def initialize(name, token
   self.name = name
-    self.token = token
+      self.token = token
     |unclosed pipe
     {unclosed bracket
   end

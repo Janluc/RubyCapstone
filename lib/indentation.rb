@@ -10,7 +10,8 @@ class IndentationModule
     line_arr = line.split(/ /)
     check_line(line_arr)
     @indent_counter.negative? ? 0 : @indent_counter
-    return true if !line_arr[0..@indent_counter].all?('') && @indent_counter.positive?
+    
+    return true if spaces_in_line(line_arr) != @indent_counter * 2  && line_arr.length() > 1 && line_arr[0] != '#'
 
     @indent_counter += @add_to_counter
     false
@@ -22,11 +23,22 @@ class IndentationModule
     ret_val = 0
     @keywords.each do |keyword|
       if word == keyword
-        @indent_counter.zero? ? (ret_val = 1) : (ret_val = 2)
+        ret_val = 1
         break
       end
     end
     ret_val
+  end
+
+  def spaces_in_line(line)
+    spaces_inline = 0
+    line.each do |word|
+       if word == ''
+        spaces_inline += 1
+       else
+        return spaces_inline.zero? ? 0 : spaces_inline
+       end
+    end
   end
 
   def check_line(line)
@@ -37,7 +49,7 @@ class IndentationModule
       end
       next unless word == 'end'
 
-      @indent_counter -= 2
+      @indent_counter /= 2
       @add_to_counter = 0
       break
     end
