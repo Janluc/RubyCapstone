@@ -29,7 +29,7 @@ end
 print_intro
 file_input = gets.chomp
 file = File.open("./to_lint/#{file_input}")
-# file = File.open('C:\Users\Janlu\Desktop\Programming\Microverse\Ruby\TestFiles\to_lint\player.rb')
+
 
 linter = Linter.new(file)
 bracket_linter = linter.bracket_linter
