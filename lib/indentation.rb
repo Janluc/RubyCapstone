@@ -41,7 +41,6 @@ class IndentationModule
     ret_val
   end
 
-
   def keywords_in_line(line)
     line.each do |word|
       if check_keywords(word).positive?

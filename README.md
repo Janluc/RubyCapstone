@@ -94,7 +94,7 @@ end
 ```
 - This linter will let you know if your indentation is incorrect.
 ## Pre-requisites
-- The most up to date version of Ruby
+- Ruby Ver 2.7
 - a Command Line/Terminal
 
 ## Installation
