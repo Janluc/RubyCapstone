@@ -1,5 +1,6 @@
 class IndentationModule
-  attr_reader :add_to_counter, :indent_counter
+  attr_accessor :indent_counter
+  attr_reader :add_to_counter
 
   def initialize
     @indent_counter = 0
