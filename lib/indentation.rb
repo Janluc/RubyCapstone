@@ -1,7 +1,7 @@
 class IndentationModule
   attr_accessor :indent_counter
   attr_reader :add_to_counter
-  
+
   def initialize
     @indent_counter = 0
     @keywords = %w[def class if else]
@@ -31,7 +31,7 @@ class IndentationModule
     end
   end
 
-  def indent_counter(word)
+  def check_keywords(word)
     ret_val = 0
     @keywords.each do |keyword|
       if word == keyword
@@ -45,8 +45,8 @@ class IndentationModule
 
   def keywords_in_line(line)
     line.each do |word|
-      if indent_counter(word).positive?
-        @add_to_counter = indent_counter(word)
+      if check_keywords(word).positive?
+        @add_to_counter = check_keywords(word)
         break
       end
       next unless word == 'end'

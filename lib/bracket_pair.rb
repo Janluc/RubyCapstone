@@ -2,6 +2,7 @@ BracketPair = Struct.new(:name, :open_pair, :close_pair)
 
 class BracketPairModule
   attr_accessor :bracket_pairs, :pair_index
+  attr_reader :open_bracket, :close_bracket
 
   def initialize
     @bracket_pairs = [
@@ -20,8 +21,8 @@ class BracketPairModule
   def missing_bracket_pair?(line)
     @open_bracket = nil
     @close_bracket = nil
-    line.split(//).each do |item|
-      check_pair(item)
+    line.split(//).each do |char|
+      check_pair(char)
     end
     return true if !@open_bracket.nil? && @close_bracket.nil?
 
@@ -30,16 +31,16 @@ class BracketPairModule
 
   private
 
-  def check_pair(item)
+  def check_pair(char)
     @bracket_pairs.each_with_index do |i, index|
-      if i.open_pair == item && @open_bracket.nil?
-        @open_bracket = item
+      if i.open_pair == char && @open_bracket.nil?
+        @open_bracket = char
         @pair_index = index
         next
       end
-      next unless i.close_pair.eql? item
+      next unless i.close_pair.eql? char
 
-      @close_bracket = item
+      @close_bracket = char
     end
   end
 end
