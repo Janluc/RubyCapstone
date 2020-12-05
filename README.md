@@ -75,7 +75,7 @@ Incorrect Indentation
 
   def initialize(name, token
   self.name = name
-  self.token = token
+      self.token = token
   end
 end
 
@@ -99,8 +99,8 @@ end
 
 ## Installation
 - First download or clone the project
-- With your terminal go to the bin folder in the directory where you have downloaded/cloned the repo
-- in your terminal type "ruby main.rb" without the quotes
+- With your terminal go to the directory where you have downloaded/cloned the repo
+- in your terminal type "ruby bin/main.rb" without the quotes
 
 ## Instructions
 - When you run the program, You will be asked to place the file you would like to lint to the "to_lint" folder.
